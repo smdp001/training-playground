@@ -13,13 +13,13 @@ pipeline {
     }
     post {
     	success {
-		sh 'echo Success!'
+		'echo Success!'
 	}
 	failure {
-		sh 'echo Fail!'
+		'echo Fail!'
 	}
 	always {
-		sh 'echo Always!'
+		'echo Always!'
 	}
     }
 }
