@@ -5,5 +5,11 @@ pipeline {
 		}
 	}
     stages {
+    	stage('maven') {
+		sh 'mvn --version'
+	}
+	stage('npm') {
+		sh 'npm --version'
+	}
     }
 }
