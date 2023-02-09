@@ -14,10 +14,10 @@ pipeline {
 					}
 				
 			}
-            steps {
+	 }
+         steps {
                 sh 'echo "$NAME"'
                 sh 'echo "$AGE"'
-            }
-        }
+         }
     }
 }
