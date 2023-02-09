@@ -2,13 +2,21 @@ pipeline {
     agent none
     stages {
     	stage('maven') {
-		agent any
+		agent {
+			docker {
+				image 'maven:latest'
+			}
+		} 
 		steps {
 			sh 'mvn --version'
 		}
 	}
 	stage('npm') {
-		agent any
+		agent {
+			docker {
+				image 'node:latest' 
+			}
+		} 
 		steps {
 			sh 'npm --version'
 		}	
