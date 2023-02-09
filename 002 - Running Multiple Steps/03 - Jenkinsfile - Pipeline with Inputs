@@ -14,10 +14,9 @@ pipeline {
 					}
 				
 			}
-	 }
-         steps {
-                sh 'echo "$NAME"'
-                sh 'echo "$AGE"'
-         }
+         		steps {
+                		sh 'echo "$NAME"'
+                		sh 'echo "$AGE"'
+         		}
     }
 }
