@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('maven') {
 			agent {
-				docker {
+				dockerfile {
 					dir '003 - Defining Execution Environments'
 					filename '04 - Jenkinsfile - Multiple Agents using Dockerfile_Maven'
 					additionalBuildArgs ''
@@ -17,7 +17,7 @@ pipeline {
 	
 		stage('npm') {
 			agent {
-				docker {
+				dockerfile {
 					dir '003 - Defining Execution Environments'
 					filename '04 - Jenkinsfile - Multiple Agents using Dockerfile_Node'
 					additionalBuildArgs ''
