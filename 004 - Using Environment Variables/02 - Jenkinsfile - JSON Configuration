@@ -4,6 +4,11 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+	environment {
+		BUILD_CONFIGS = ''' [{name: "teste", command: "echo teste command"}, 
+							 {name: "teste 1", command: "echo teste 1 command"}]
+				'''	 
+	}
     stages {
         stage('build') {
             steps {
