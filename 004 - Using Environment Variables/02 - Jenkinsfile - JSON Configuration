@@ -4,12 +4,15 @@ pipeline {
 			image 'alpine:latest' 
 		}
 	}
+   environment {
+		NOTIFICATION_EMAIL = '''[{name: "teste", command: "echo 'teste command'"}, 
+					    {name: "teste 1", command: "echo 'teste 1 command'"}]'''
+   }
     stages {
         stage('build') {
             steps {
                 script {
-                	def buildConfigs =  readJSON text: '''[{name: "teste", command: "echo 'teste command'"}, 
-					    {name: "teste 1", command: "echo 'teste 1 command'"}]'''
+                	def buildConfigs =  readJSON text: NOTIFICATION_EMAIL
 
                 	buildConfigs.each{ buildConfig ->
                 		sh "echo '$buildConfig.name' && $buildConfig.command"
