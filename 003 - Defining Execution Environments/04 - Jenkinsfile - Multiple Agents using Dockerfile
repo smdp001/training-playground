@@ -1,6 +1,32 @@
 pipeline {
-    agent { 
-	}
-    stages {
+		agent none
+	stages {
+		stage('maven') {
+			agent {
+				docker {
+					dir '003 - Defining Execution Environments'
+					filename '04 - Jenkinsfile - Multiple Agents using Dockerfile_Maven'
+					additionalBuildArgs ''
+					args ''
+				}
+			} 
+			steps {
+				sh 'mvn --version'
+			}
+		}
+	
+		stage('npm') {
+			agent {
+				docker {
+					dir '003 - Defining Execution Environments'
+					filename '04 - Jenkinsfile - Multiple Agents using Dockerfile_Node'
+					additionalBuildArgs ''
+					args ''
+				}
+			} 
+			steps {
+				sh 'npm --version'
+			}	
+		}
     }
 }
