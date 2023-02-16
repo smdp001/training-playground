@@ -1,7 +1,8 @@
 pipeline {
     agent { 
         dockerfile {
-            dir '003 - Defining Execution Environments - 02 - Dockerfile - Dockerfile Agent'
+            dir '003 - Defining Execution Environments'
+            filename '02 - Dockerfile - Dockerfile Agent'
             additionalBuildArgs ''
             args ''
         }
