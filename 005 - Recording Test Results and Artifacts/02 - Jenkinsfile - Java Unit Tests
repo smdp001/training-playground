@@ -3,11 +3,12 @@ pipeline {
 		docker { 
 			image 'alpine:latest' 
 		}
-		
-		docker { 
-			image 'maven:latest' 
-		}
 	}
+    agent { 
+		docker { 
+			image 'mvn:latest' 
+		}
+	}	
     stages {
         stage('build') {
             steps {
