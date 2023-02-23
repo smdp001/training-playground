@@ -7,7 +7,7 @@ pipeline {
     stages {
 		script {
 			def buildConfigs =  readJSON text: '''[{name: "teste", command: "teste command"}, 
-													name: "teste 2", command: "teste 2 command"}]'''
+													{name: "teste 2", command: "teste 2 command"}]'''
 						
 			buildConfigs.each{ buildConfig ->
 						stage('build') {
@@ -16,5 +16,6 @@ pipeline {
 							}
 						}
 			}		
-    }
+		}
+	}
 }
