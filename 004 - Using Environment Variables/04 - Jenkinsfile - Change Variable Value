@@ -12,10 +12,12 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                NUMBER_OF_ISSUES = 10
+		script {
+			NUMBER_OF_ISSUES = 10
+		}
             }
         }
-		stage('Notification') {
+	stage('Notification') {
             steps {
                 sh "echo '$NUMBER_OF_ISSUES' issues"
             }
