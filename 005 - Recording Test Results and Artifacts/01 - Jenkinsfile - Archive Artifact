@@ -7,8 +7,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "curl www.google.com"
+                sh "curl www.google.com > file.html"
             }
         }
     }
+	post {
+		always {
+			archiveArtifacts artifacts: ''
+		}
+	}
 }
