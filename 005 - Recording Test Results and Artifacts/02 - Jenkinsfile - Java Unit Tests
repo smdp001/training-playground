@@ -5,9 +5,9 @@ pipeline {
 		}
 	}
     stages {
-        stage('tests') {
+        stage('build') {
             steps {
-                sh ""
+                005 - Recording Test Results and Artifacts/02 - Java Unit Tests/target/java-app-1.0.0.jar
             }
         }
     }
