@@ -1,14 +1,9 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
-		}
-	}
-    agent { 
-		docker { 
 			image 'mvn:latest' 
 		}
-	}	
+	}
     stages {
         stage('build') {
             steps {
