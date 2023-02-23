@@ -14,7 +14,7 @@ pipeline {
 					buildConfigs.each{ buildConfig ->
 						stage('$buildConfig.name'){
 							steps {
-								sh "echo '$buildConfig.name' && $buildConfig.command"			
+								sh "echo 'SUCESSO'"			
 							}
 							
 						}
