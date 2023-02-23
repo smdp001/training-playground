@@ -12,7 +12,7 @@ pipeline {
         stage('build') {
             steps {
 				script {
-					005 - Recording Test Results and Artifacts/02 - Java Unit Tests/target/java-app-1.0.0.jar
+					sh 'mvn 005 - Recording Test Results and Artifacts/02 - Java Unit Tests/target/java-app-1.0.0.jar'
 				}
             }
         }
