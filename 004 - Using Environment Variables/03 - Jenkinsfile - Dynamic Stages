@@ -12,7 +12,7 @@ pipeline {
 															{name: "PYTHON", command: "PYTHON command"}]'''
 								
 					buildConfigs.each{ buildConfig ->
-						stage('$buildConfig.name'){
+						stage(buildConfig.name){
 								sh "echo 'SUCESSO'"										
 						}
 					}
