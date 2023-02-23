@@ -6,15 +6,17 @@ pipeline {
 	}
     stages {
 		stage('build') {
-			def buildConfigs =  readJSON text: '''[{name: "PLSQL", command: "PLSQL command"}, 
-													{name: "PYTHON", command: "PYTHON command"}]'''
+			steps {
+				def buildConfigs =  readJSON text: '''[{name: "PLSQL", command: "PLSQL command"}, 
+														{name: "PYTHON", command: "PYTHON command"}]'''
+							
+				buildConfigs.each{ buildConfig ->
+					stage($buildConfig.name){
+						steps {
+							sh "echo '$buildConfig.name' && $buildConfig.command"			
+						}
 						
-			buildConfigs.each{ buildConfig ->
-				stage($buildConfig.name){
-					steps {
-						sh "echo '$buildConfig.name' && $buildConfig.command"			
 					}
-					
 				}
 			}
 		}
