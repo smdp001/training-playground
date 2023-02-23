@@ -13,7 +13,7 @@ pipeline {
     }
 	post {
 		always {
-			archiveArtifacts artifacts: '005 - Recording Test Results and Artifacts'
+			archiveArtifacts artifacts: 'file.html'
 		}
 	}
 }
