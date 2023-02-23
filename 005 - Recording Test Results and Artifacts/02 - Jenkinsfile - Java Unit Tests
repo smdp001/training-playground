@@ -1,7 +1,7 @@
 pipeline {
     agent { 
 		docker { 
-			image 'mvn:latest' 
+			image 'maven:latest' 
 		}
 	}
     stages {
