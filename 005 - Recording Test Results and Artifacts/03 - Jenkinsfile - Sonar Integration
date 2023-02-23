@@ -9,7 +9,7 @@ pipeline {
             steps {
 				script {
 					sh 'mvn clean verify sonar:sonar -Dsonar.host.url=http://3.124.164.63:8081/about \
-						-Dsonar.projectKey="005 - Recording Test Results and Artifacts/03 - Sonar Integration/'
+						-Dsonar.projectKey=005
 				}
             }
         }
